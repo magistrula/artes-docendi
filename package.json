@@ -1,0 +1,9 @@
+{
+  "name": "artesdocendi",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Anna Andresian",
+  "dependencies": {
+    "express": "^4.13.0"
+  }
+}
