@@ -54,6 +54,6 @@ For those who are trying out programming for the first time, here are some words
 1. Navigate to the "root" directory of your app: 
   - If you are in the `~/Workspace` directory, you can type `cd {{YOUR_APP_NAME}}` to get into `~/Workspace/{{YOUR_APP_NAME}}`
   - If you are in the `~/Workspace/{{YOUR_APP_NAME}}/app` directory, you can type `cd ..` to go back one level to `~/Workspace/{{YOUR_APP_NAME}}`
-  - If you are not sure where you are, simply type `cd` to get back to the home directory `~` and navigate into your Workspace then app folder from there
+  - If you are not sure where you are, simply type `cd ~/Workspace/{{YOUR_APP_NAME}}`
 2. Type `node server.js` to start the server
-3. In your web browser, navigate to http://localhost:3000, and you should see your Hello World message
+3. In your web browser, navigate to `http://localhost:3000`, and you should see your Hello World message
