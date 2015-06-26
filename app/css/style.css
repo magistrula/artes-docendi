@@ -1,0 +1,36 @@
+body {
+  background-color: #B84D4D;
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid #333;
+  background-color: #FFFF99;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+button:active {
+  background-color: #FFCC99;
+}
+
+button:focus {
+  outline: none;
+}
+
+.large-button {
+  font-size: 28px;
+  padding: 10px 20px;
+}
+
+.set-image-button {
+  display: block;
+  margin: 20px auto;
+}
+
+#main-image {
+  display: block;
+  margin: 0 auto;
+  height: 600px;
+  border-radius: 20px;
+  box-shadow: 2px 1px 10px #333;
+}
