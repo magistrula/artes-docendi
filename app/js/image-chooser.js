@@ -1,6 +1,10 @@
-var allImageNames = ['achilles.jpg','minerva.jpg','caesar.jpg','alexander.jpg','atlas.jpg','scipio.jpg','hercules.jpg'];
+var allImageNames = [];
 var imageElement = document.getElementById('main-image');
 var imageNameBank = [];
+
+$.get('/images/main', function (imageNames) {
+  allImageNames = imageNames;    
+});
 
 var getRandomIndexInArray = function (array) {
     return Math.floor(Math.random() * array.length);
@@ -14,7 +18,7 @@ var getRandomImageName = function () {
     return imageNameBank.splice(index, 1);
 }
 
-var setImage = function () {
+var setMainImage = function () {
     var imageName = getRandomImageName();
-    imageElement.src = 'img/' + imageName;
+    imageElement.src = 'img/main/' + imageName;
 }
