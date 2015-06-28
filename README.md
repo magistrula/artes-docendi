@@ -57,3 +57,4 @@ For those who are trying out programming for the first time, here are some words
   - If you are not sure where you are, simply type `cd ~/Workspace/{{YOUR_APP_NAME}}`
 2. Type `node server.js` to start the server
 3. In your web browser, navigate to `http://localhost:3000`, and you should see your Hello World message
+4. When you're done, remember to stop the server. You can do this by pressing Ctrl + C (not Command + C).
