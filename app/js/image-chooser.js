@@ -1,24 +1,33 @@
-var allImageNames = [];
-var imageElement = document.getElementById('main-image');
-var imageNameBank = [];
+var ImageChooser = function (imageSubfolder, elementId, readyCallback) {
+  this.imageSubfolder = imageSubfolder;
+  this.imageElement = document.getElementById(elementId);
+  this.allImageNames = [];
+  this.imageNameBank = [];
 
-$.get('/images/main', function (imageNames) {
-  allImageNames = imageNames;    
-});
+  this._getImages(readyCallback);
+}
+
+ImageChooser.prototype._getImages = function (callback) {
+  var self = this;
+  $.get('/images/' + this.imageSubfolder, function (imageNames) {
+    self.allImageNames = imageNames;
+    if (callback) callback();
+  });
+}
+
+ImageChooser.prototype._getRandomImageName = function () {
+  if (this.imageNameBank.length === 0) {
+      this.imageNameBank = this.imageNameBank.concat(this.allImageNames);
+  }
+  var index = getRandomIndexInArray(this.imageNameBank);
+  return this.imageNameBank.splice(index, 1);
+}
+
+ImageChooser.prototype.setImage = function () {
+  var imageName = this._getRandomImageName();
+  this.imageElement.src = 'img/' + this.imageSubfolder + '/' + imageName;
+}
 
 var getRandomIndexInArray = function (array) {
     return Math.floor(Math.random() * array.length);
-}
-
-var getRandomImageName = function () {
-    if (imageNameBank.length === 0) {
-        imageNameBank = imageNameBank.concat(allImageNames);
-    }
-    var index = getRandomIndexInArray(imageNameBank);
-    return imageNameBank.splice(index, 1);
-}
-
-var setMainImage = function () {
-    var imageName = getRandomImageName();
-    imageElement.src = 'img/main/' + imageName;
 }
