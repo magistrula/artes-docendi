@@ -138,3 +138,4 @@ Finally! This is it. The `setImage` function. The job of this function is to pic
   1. In the terminal, navigate to the "root" directory of your app: `cd ~/Workspace/{{YOUR_APP_NAME}}`
   2. Type `node server.js` to start the server
   3. In your web browser, navigate to `http://localhost:3000`, and you should see your button and the Via Appia image. Click GO! and see the magic happen.
+  4. When you're done, remember to stop the server. You can do this by pressing Ctrl + C (not Command + C).
