@@ -18,7 +18,7 @@ var getRandomImageName = function () {
     return imageNameBank.splice(index, 1);
 }
 
-var setMainImage = function () {
+var setImage = function () {
     var imageName = getRandomImageName();
     imageElement.src = 'img/main/' + imageName;
 }
