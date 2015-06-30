@@ -7,12 +7,18 @@ $.get('/images/main', function (imageNames) {
 });
 
 var setImage = function () {
-  if (imageNameBank.length === 0) {
-      imageNameBank = imageNameBank.concat(allImageNames);
-  }
+    var imageName = getRandomImageName();
+    imageElement.src = 'img/main/' + imageName;
+}
 
-  var index = Math.floor(Math.random() * imageNameBank.length);
-  var imageName = imageNameBank.splice(index, 1);
+var getRandomImageName = function () {
+    if (imageNameBank.length === 0) {
+        imageNameBank = imageNameBank.concat(allImageNames);
+    }
+    var index = getRandomIndexInArray(imageNameBank);
+    return imageNameBank.splice(index, 1);
+}
 
-  imageElement.src = 'img/main/' + imageName;
+var getRandomIndexInArray = function (array) {
+    return Math.floor(Math.random() * array.length);
 }
