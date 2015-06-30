@@ -49,8 +49,9 @@ Open the `index.html` file and replace the existing code with the code below:
     <br>
     <br>
     <img id="main-image" src="img/via-appia.jpg" height="600">
+
+    <script src="js/image-chooser.js"></script>
   </body>
-  <script src="js/image-chooser.js"></script>
 </html>
 ```
 
@@ -67,72 +68,59 @@ Open `image-chooser.js` and enter the code below, step by step:
 
 ```javascript
 var allImageNames = ['achilles.jpg','minerva.jpg','caesar.jpg','alexander.jpg','atlas.jpg','scipio.jpg','hercules.jpg'];
-var imageElement = document.getElementById('main-image');
 var imageNameBank = [];
+var imageElement = document.getElementById('main-image');
 ```
 We have just created three variables: `allImageNames`, `imageElement`, and `imageNameBank`. 
 - `allImageNames` is an "array" that contains a list of the file names in our img folder. You'll notice that `via-appia.jpg` is not in the array. There's no special reason for this...it's just being done for the sake of an example. The way we're setting up this page, the Via Appia image will appear when the page loads, but once we start pressing the button, it will be replaced by a variety of other images.
+- `imageNameBank` is an empty list. We are going to fill it up with the file names in the `allImageNames` array, then take one image name out at a time, and when `imageNameBank` becomes empty, we'll refill it again from the `allImageNames` array.
 - `imageElement` is a reference to the `<img>` element in our html file. The `document` is a container for all of the elements in our web page. There are various things we can ask the `document` to do, and in this case, we are asking it to find an element with the id "image," and we are saving that element under the variable name `imageElement`.
-- `imageNameBank` is an empty list. It won't be empty for long, though. More on that soon.
-
-```javascript
-var getRandomIndexInArray = function (array) {
-    return Math.floor(Math.random() * array.length);
-}
-```
-
-We have just written our first function, called `getRandomImageIndexInArray`. Why do we need this function? 
-- In our `allImageNames` array, 'achilles.jpg' is at position 0, 'minerva.jpg' is at position 1, 'caesar.jpg' is at position 2, etc.
-- Every time we click our GO! button, we want to choose a random image from our list, so we are going to ask the array to give us the image name at a random position. In code, the position of an item in an array is called its `index`, so we need a function that will give us a random index.
-- In order for the function to give us this random number, it needs to know how many items are in the array, so we have to provide the array to the function, which is indicated like so: `function (array)`
-- JavaScript gives us a way to get a random number between 0 and 1: `Math.random()`. If we take that number and multiply it by 5, for example, we will end up with a number between 0 and 5, but the number will be a decimal, like 2.3047983. We need a whole number, so we have to turn something like 2.3047983 into the number 2 instead, and that's what `Math.floor()` does (it rounds down).
-- Let's say we had an array called myArray: `var myArray = ['a','b','c','d','e'];`. If we run `getRandomIndexInArray(myArray)`, here's  what would happen, with made-up values for the sake of an example:
-    -. `Math.random()` gives us `.9`
-    -. `array.length` = `5`, because there are 5 items in `myArray`
-    -. `.95 * 5 = 4.75`
-    -. `Math.floor(4.75)` = `4`
-    -. The `return` keyword means that, when the function is finished running, it should report the value that it computed so that we can do something with that number.
-    -. If we did something like this: `var randomIndex = getRandomIndexInArray(myArray)`, then `randomIndex` would now have the value `4`;
-  
-```javascript
-var getRandomImageName = function () {
-    if (imageNameBank.length === 0) {
-        imageNameBank = imageNameBank.concat(allImageNames);
-    }
-    var index = getRandomIndexInArray(imageNameBank);
-    return imageNameBank.splice(index, 1);
-}
-```
-
-Notice that this new function `getRandomImageName` uses the `getRandomIndexInArray` function that we created previously. The purpose of `getRandomImageName` is to give us the name of our random image. Before we go into explaining how this function works, let's talk about how we're going to go about getting this random image over and over again:
-  - When we click on our GO! button, we're going to cycle through all the images, and not just once. We're going to go through again and again and again. 
-  - We are going to keep one copy of the list that we never touch: this is the `allImageNames` array, and it will be a list of all the images we could possibly use.
-  - We have already created a second array `imageNameBank`, and that is the one we'll be taking things out of.
-  - At first `imageNameBank` is empty, so before we can choose our first image, we have to dump everything from `allImageNames` into `imageNameBank`. 
-  - Next, we will pick a random index in the `imageNameBank` array and take out the name that appears in that position. Now, `imageNameBank` will have one fewer item in it. `allImageNames` still has all the possible images we could choose, but `imageNameBank` only has the images that have not been chosen yet.
-  - We will continue to grab things out of `imageNameBank`, and each time we go to take something out, we will check if `imageNameBank` is empty. If it is, we'll just dump everything in `allImageNames` into `imageNameBank` in order to refill it.
-
-Ok, so here's how the function works, line by line: 
-  - If the length of `imageNameBank` is 0 (i.e., if there is nothing in it), then let's `imageNameBank` equal itself (an empty array) concatenated (combined) with the `allImageNames` array. `array1.concat(array2)` is how we dump everything from `array2` into `array1`.
-  - Let's get a random index in the `imageNameBank` array and assign that number to the variable `index`.
-  - Finally let's remove (splice) some items from `imageNameBank`. We want the item at the random `index` we computed, and we only want to take out `1` item (`imageNameBank.splice(index, 1)`).
-  - Whatever name we spliced out, lets report (return) that name at the end of the function.
 
 ```javascript
 var setImage = function () {
-    var imageName = getRandomImageName();
-    imageElement.src = 'img/' + imageName;
+  if (imageNameBank.length === 0) {
+      imageNameBank = imageNameBank.concat(allImageNames);
+  }
+
+  var index = Math.floor(Math.random() * imageNameBank.length);
+  var imageName = imageNameBank.splice(index, 1);
+
+  imageElement.src = 'img/' + imageName;
 }
 ```
 
-Finally! This is it. The `setImage` function. The job of this function is to pick a random image name then tell the `<img>` element on our html page to display that file.
-  - First, we create a variable `imageName`, and to come up with a value for that variable, we run `getRandomImageName()`.
-  - `getRandomImageName` checks if the `imageNameBank` is empty and refills it if necessary.
-  - `getRandomImageName` uses `getRandomIndexInArray` to come up with a random position in `imageNameBank` then reports back the image name at that index.
-  - Now that the `setImage` function has come up with an `imageName`, it can set the `src` attribute of the `imageElement`. If you look back at our html code, you'll see that the `src` attribute starts out as `'img/via-appia.jpg'`, but we're going to change that now.
-  - The `setImage` function instructs the `imageElement` to set its `src` attribute to `img/` + the name of the random image we selected, so we might end up with `img/alexander.jpg`, for example.
+This is the function that will run whenever we click the GO! button. Before describing the code in the `setImage` function, let's talk about what it needs to do:
+  1. Make sure there is something in the `imageNameBank`. If there is nothing in there, fill up `imageNameBank` with the image names that are in the `allImageNames` array.
+  2. Pick a random item from the `imageNameBank`.
+  3. Instruct the `<img>` element that we've identified with the id `main-image` to update its `src` attribute and use the file name that we just picked from `imageNameBank`.
 
-  That's it! We already told the `<button>` in our html page to run the `setImage` function whenever it is clicked, so all we have to do is start the server, load the web page, and click away.
+How the code works:
+  * `if (imageNameBank.length === 0)`
+    - If `imageNameBank` has nothing in it . . . 
+  * `imageNameBank = imageNameBank.concat(allImageNames);`
+    - Set `imageNameBank` equal to itself (an empty array) combined with the `allImageNames`array.
+  * `var index = Math.floor(Math.random() * imageNameBank.length);`
+    - Pick a random number between 0 and the number of items in `imageNameBank`
+  * `var imageName = imageNameBank.splice(index, 1);`
+    - From `imageNameBank`, remove 1 item at the position determined in Step 3 and save this as `imageName`.
+  * `imageElement.src = 'img/' + imageName;`
+    - Instruct the image element on our web page to change its `src` attribute to point to a new file inside the `img/` folder...the file name determined in Step 4.
+
+Some notes on these individual steps:
+  * Step 1:
+    - `===` is how you check "is __ equal to __?"
+    - `=` is how you say "Make __ equal to __" (e.g., Step 2)
+  * Step 2:
+    - `concat` is a way of combining two arrays. `[1,2,3].concat([4,5,6])` would give us `[1,2,3,4,5,6]`.
+  * Step 3:
+    - The position of an item in an array is called it's "index." The first item in an array has index 0. So, in our `allImageNames` array, 'achilles.jpg' is at position 0, 'minerva.jpg' is at position 1, 'caesar.jpg' is at position 2, etc.
+    - `Math.random()` gives us a decimal number between 0 and 1 (including 0, up to but not including 1).
+    - `Math.random()` * X gives us a number between 0 and X (including 0, up to but not including X).
+    - `Math.floor(X)` rounds X down to the nearest integer.
+    - If we have an array with 3 items and we want to target a random position in the array, we need to randomly generate the number 0, 1, or 2.
+    - `Math.floor(Math.random() * 3)` will give us the random number we need.
+
+Every time we click our GO! button, we want to choose a random image from our list, so we are going to ask the array That's it! We already told the `<button>` in our html page to run the `setImage` function whenever it is clicked, so all we have to do is start the server, load the web page, and click away.
 
 ### Start the server
   1. In the terminal, navigate to the "root" directory of your app: `cd ~/Workspace/{{YOUR_APP_NAME}}`

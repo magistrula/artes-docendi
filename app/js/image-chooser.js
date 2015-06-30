@@ -1,6 +1,7 @@
-var allImageNames = ['achilles.jpg','minerva.jpg','caesar.jpg','alexander.jpg','atlas.jpg','scipio.jpg','hercules.jpg'];
-var imageElement = document.getElementById('main-image');
+var allImageNames = ['achilles.jpg','minerva.jpg','caesar.jpg','alexander.jpg',
+                     'atlas.jpg','scipio.jpg','hercules.jpg'];
 var imageNameBank = [];
+var imageElement = document.getElementById('main-image');
 
 var setImage = function () {
   if (imageNameBank.length === 0) {
