@@ -17,10 +17,10 @@ ImageChooser.prototype._getImages = function (callback) {
 
 ImageChooser.prototype._getRandomImageName = function () {
   if (this.imageNameBank.length === 0) {
-      this.imageNameBank = this.imageNameBank.concat(this.allImageNames);
+    this.imageNameBank = this.imageNameBank.concat(this.allImageNames);
   }
   var index = getRandomIndexInArray(this.imageNameBank);
-  return this.imageNameBank.splice(index, 1);
+  return this.imageNameBank.splice(index, 1)[0];
 }
 
 ImageChooser.prototype.setImage = function () {
@@ -29,5 +29,5 @@ ImageChooser.prototype.setImage = function () {
 }
 
 var getRandomIndexInArray = function (array) {
-    return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);
 }
