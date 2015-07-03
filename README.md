@@ -79,11 +79,11 @@ We have just created three variables: `allImageNames`, `imageElement`, and `imag
 ```javascript
 var setImage = function () {
   if (imageNameBank.length === 0) {
-      imageNameBank = imageNameBank.concat(allImageNames);
+    imageNameBank = imageNameBank.concat(allImageNames);
   }
 
   var index = Math.floor(Math.random() * imageNameBank.length);
-  var imageName = imageNameBank.splice(index, 1);
+  var imageName = imageNameBank.splice(index, 1)[0];
 
   imageElement.src = 'img/' + imageName;
 }
@@ -101,8 +101,9 @@ How the code works:
     - Set `imageNameBank` equal to itself (an empty array) combined with the `allImageNames`array.
   * `var index = Math.floor(Math.random() * imageNameBank.length);`
     - Pick a random number between 0 and the number of items in `imageNameBank`
-  * `var imageName = imageNameBank.splice(index, 1);`
-    - From `imageNameBank`, remove 1 item at the position determined in Step 3 and save this as `imageName`.
+  * `var imageName = imageNameBank.splice(index, 1)[0];`
+    - From `imageNameBank`, extract (splice) 1 item at the position determined in Step 3.
+    - When we splice elements out of an array, we get a new array of the items that we extracted. We only spliced one item out of `imageNameBank`, so we'll save the first (and only) item in that array (`[0]`) as our new `imageName`.
   * `imageElement.src = 'img/' + imageName;`
     - Instruct the image element on our web page to change its `src` attribute to point to a new file inside the `img/` folder...the file name determined in Step 4.
 
