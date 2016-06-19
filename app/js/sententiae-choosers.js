@@ -33,7 +33,7 @@ const VEHICLE_OBJECT_SIGNUM_CHOOSER = new ItemChooser([DIR_OBJ_SIGNUM, WITH_SIGN
 const TENSE_NAME_CHOOSER = new ItemChooser(ALL_TENSE_NAMES);
 const TENSE_SIGNUM_CHOOSER = new ItemChooser(ALL_TENSE_SYMBOLS);
 
-const VOCAB_CHOOSERS = {
+const VOCAB_CATEGORIES = {
   affectus: { verbChooser: LINKING_VERB_CHOOSER, objectSignumChooser: ADJ_SIGNUM_CHOOSER },
   animalia: { verbChooser: ANIMATE_VERB_CHOOSER, objectSignumChooser: PERSON_OBJECT_SIGNUM_CHOOSER },
   cibi: { verbChooser: FOOD_VERB_CHOOSER, objectSignumChooser: FOOD_OBJECT_SIGNUM_CHOOSER },

@@ -8,10 +8,10 @@ const CHOOSERS = {
 };
 
 function initialize() {
-  $.get('/sententiae_images', (images) => {
-    Object.keys(images).forEach((category) => {
-      if (VOCAB_CHOOSERS[category]) {
-        VOCAB_CHOOSERS[category].nounChooser = new ItemChooser(images[category]);
+  $.get('/sententiae_images', function(images) {
+    Object.keys(images).forEach(function(category) {
+      if (VOCAB_CATEGORIES[category]) {
+        VOCAB_CATEGORIES[category].nounChooser = new ItemChooser(images[category]);
       }
     });
 
@@ -26,41 +26,36 @@ function initialize() {
 function setVocabChoosers() {
   const noun1Category = document.getElementById('noun1-select').value;
   const noun2Category = document.getElementById('noun2-select').value;
-  CHOOSERS.noun1 = VOCAB_CHOOSERS[noun1Category].nounChooser;
-  CHOOSERS.noun2 = VOCAB_CHOOSERS[noun2Category].nounChooser;
-  CHOOSERS.noun2Signum = VOCAB_CHOOSERS[noun2Category].objectSignumChooser;
-  CHOOSERS.verb = VOCAB_CHOOSERS[noun2Category].verbChooser;
+  CHOOSERS.noun1 = VOCAB_CATEGORIES[noun1Category].nounChooser;
+  CHOOSERS.noun2 = VOCAB_CATEGORIES[noun2Category].nounChooser;
+  CHOOSERS.noun2Signum = VOCAB_CATEGORIES[noun2Category].objectSignumChooser;
+  CHOOSERS.verb = VOCAB_CATEGORIES[noun2Category].verbChooser;
 }
 
 function chooseItemsWithVerb() {
   _setVerbText(CHOOSERS.verb.chooseItem());
-  _setTenseText({
-    text: CHOOSERS.tenseName.chooseItem()
-  });
-  _setNounImages({
-    noun1Src: CHOOSERS.noun1.chooseItem(),
-    noun2Src: CHOOSERS.noun2.chooseItem()
-  });
+  _setTenseText(CHOOSERS.tenseName.chooseItem());
+  _setNounImages(
+    CHOOSERS.noun1.chooseItem(),
+    CHOOSERS.noun2.chooseItem()
+  );
 }
 
 function chooseItemsWithSigna() {
   _setVerbText('');
-  _setTenseText({
-    text: CHOOSERS.tenseSignum.chooseItem(),
-    isSignum: true
-  });
-  _setNounImages({
-    noun1Src: CHOOSERS.noun1.chooseItem(),
-    noun2Src: CHOOSERS.noun2.chooseItem(),
-    noun2Signum: CHOOSERS.noun2Signum.chooseItem()
-  });
+  _setTenseText(CHOOSERS.tenseSignum.chooseItem(), true);
+  _setNounImages(
+    CHOOSERS.noun1.chooseItem(),
+    CHOOSERS.noun2.chooseItem(),
+    CHOOSERS.noun2Signum.chooseItem()
+  );
 }
 
 function _setVerbText(text) {
   document.getElementById('verb').innerHTML = text;
 }
 
-function _setTenseText({ text, isSignum }) {
+function _setTenseText(text, isSignum) {
   if (isSignum) {
     $('#tense').html(text).addClass('u-signum u-signum-xl');
   } else {
@@ -68,7 +63,7 @@ function _setTenseText({ text, isSignum }) {
   }
 }
 
-function _setNounImages({ noun1Src, noun2Src, noun2Signum }) {
+function _setNounImages(noun1Src, noun2Src, noun2Signum) {
   document.getElementById('noun1').src = noun1Src;
   document.getElementById('noun2').src = noun2Src;
 

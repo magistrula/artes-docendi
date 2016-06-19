@@ -1,12 +1,12 @@
-let slideshowManager;
+let imageManager;
 
 function initialize() {
   $.get('/images/slideshow', (imagePaths) => {
-    slideshowManager = new SlideshowManager('main-image', imagePaths);
+    imageManager = new ImageManager('main-image', imagePaths);
     $('.main-image-button').attr('disabled', false);
   });
 }
 
 function setImage() {
-  slideshowManager.setImage();
+  imageManager.setImage();
 }
