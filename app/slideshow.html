@@ -2,23 +2,21 @@
 <html>
 
   <head>
-    <title>Artes Docendi</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Artes Docendi - Slideshow</title>
+    <link rel="stylesheet" type="text/css" href="css/slideshow.css">
   </head>
 
   <body>
-    <button class="large-button main-image-button"
-            onclick="mainImageChooser.setImage()">GO!</button>
-    <img id="main-image" src="img/via-appia.jpg">
+    <button class="large-button main-image-button" onclick=setImage() disabled >GO!</button>
+    <img id="main-image" src="images/via-appia.jpg">
 
     <script src="vendor/jquery-1.11.3.min.js"></script>
+    <script src="js/item-chooser.js"></script>
+    <script src="js/slideshow-manager.js"></script>
     <script src="js/slideshow.js"></script>
 
     <script>
-      $('.main-image-button').css('visibility', 'hidden');
-      var mainImageChooser = new ImageChooser('main', 'main-image', function () {
-        $('.main-image-button').css('visibility', 'visible');
-      });
+      window.onload = initialize;
     </script>
   </body>
 

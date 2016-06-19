@@ -1,9 +1,10 @@
 const fs = require('fs');
 const router = require('express').Router();
 
-router.get('/slideshow_images', (req, res) => {
-  fs.readdir('app/images/slideshow/', function (err, files) {
-    response.send(files);
+router.get('/images/:dir', (req, res) => {
+  fs.readdir(`app/images/${req.params.dir}`, (err, files) => {
+    const filePaths = files.map(fileName => `images/${req.params.dir}/${fileName}`);
+    res.send(filePaths);
   });
 });
 
