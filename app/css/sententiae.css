@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Signa Latina";
+  src: url("../fonts/signa-latina.otf");
+}
+
+body,
+select,
+button {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: .02em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  background-color: #dbdbdb;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #9ddfff;
+  padding: 10px 20px;
+}
+
+select:focus,
+button:focus {
+  outline: none;
+}
+
+h1, .h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h2, .h2 {
+  font-size: 35px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.u-signum {
+  font-family: "Signa Latina";
+  font-size: 100px;
+  color: #92222c;
+  font-style: normal;
+  line-height: 1;
+}
+
+.u-signum-xl {
+  font-size: 150px;
+}
+
+.u-flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.u-flex-eq {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.u-items-center {
+  align-items: center;
+}
+
+.u-content-center {
+  justify-content: center;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.Button {
+  border: 1px solid #333;
+  background-color: #ffff99;
+}
+
+.Button:active {
+  background-color: lightgray;
+}
+
+.Button--large {
+  font-size: 25px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+.TopBar {
+  height: 70px;
+  margin-bottom: 40px;
+  background-color: #ff9a8e;
+  border-bottom: 1px solid #333;
+}
+
+.Images {
+  margin: 20px auto 30px auto;
+}
+
+.Images-item-imageContainer {
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+.Images-item-image {
+  padding: 0 30px;
+  max-width: 300px;
+  max-height: 100%;
+}
+
+.VocabChooser {
+  font-size: 25px;
+  margin-bottom: 40px;
+}

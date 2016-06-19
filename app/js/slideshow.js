@@ -9,7 +9,7 @@ var ImageChooser = function (imageSubfolder, elementId, readyCallback) {
 
 ImageChooser.prototype._getImages = function (callback) {
   var self = this;
-  $.get('/images/' + this.imageSubfolder, function (imageNames) {
+  $.get('/slideshow_images/', function (imageNames) {
     self.allImageNames = imageNames;
     if (callback) callback();
   });

@@ -7,17 +7,17 @@
   </head>
 
   <body>
-    <button class="large-button main-image-button" 
+    <button class="large-button main-image-button"
             onclick="mainImageChooser.setImage()">GO!</button>
     <img id="main-image" src="img/via-appia.jpg">
 
     <script src="vendor/jquery-1.11.3.min.js"></script>
-    <script src="js/image-chooser.js"></script>
+    <script src="js/slideshow.js"></script>
 
     <script>
       $('.main-image-button').css('visibility', 'hidden');
       var mainImageChooser = new ImageChooser('main', 'main-image', function () {
-        $('.main-image-button').css('visibility', 'visible');  
+        $('.main-image-button').css('visibility', 'visible');
       });
     </script>
   </body>
