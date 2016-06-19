@@ -1,6 +1,10 @@
 const fs = require('fs');
 const router = require('express').Router();
 
+router.get('/', (req, res) => {
+  res.redirect('/sententiae.html');
+});
+
 router.get('/images/:dir', (req, res) => {
   fs.readdir(`app/images/${req.params.dir}`, (err, files) => {
     const filePaths = files.map(fileName => `images/${req.params.dir}/${fileName}`);
