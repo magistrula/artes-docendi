@@ -17,7 +17,7 @@ const FOOD_VERB_CHOOSER = new ItemChooser([
 ]);
 
 const LINKING_VERB_CHOOSER = new ItemChooser([
-  'esse'
+  'esse', 'vidērī', 'fierī'
 ]);
 
 const TRAVEL_VERB_CHOOSER = new ItemChooser([
