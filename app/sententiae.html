@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="vendor/bootstrap-responsive-margins.css" type="text/css">
     <link rel="stylesheet" href="vendor/flexboxgrid.min.css" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -21,7 +22,7 @@
       </button>
     </div>
 
-    <div class="mb-lg row center-xs around-xs">
+    <div class="row center-xs around-xs">
       <div class="col-xs-6 col-sm">
         <select class="VocabChooser" id="noun1-select" onchange="setVocabChoosers()">
           <option value="animalia">Animalia</option>
@@ -48,8 +49,8 @@
       </div>
     </div>
 
-    <div class="row center-xs" id="sententiae" hidden>
-      <div class="ImageItem col-xs-12 col-sm mb-lg">
+    <div class="Images row center-xs" id="sententiae" hidden>
+      <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
         <div class="ImageItem-imageContainer row middle-xs center-xs">
           <img class="ImageItem-image" id="noun1">
         </div>
@@ -60,7 +61,7 @@
         </div>
       </div>
 
-      <div class="ImageItem col-xs-12 col-sm mb-lg">
+      <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
         <div class="ImageItem-imageContainer row middle-xs center-xs">
           <img class="ImageItem-image" id="noun2">
         </div>
