@@ -3,6 +3,10 @@
   src: url("../fonts/signa-latina.otf");
 }
 
+html {
+  min-width: 320px;
+}
+
 body,
 select,
 button {
@@ -14,8 +18,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 20px;
-  line-height: 1.4;
-  background-color: #dbdbdb;
+  background-color: #E5E5E5;
 }
 
 select {
@@ -43,32 +46,9 @@ h2, .h2 {
 
 .u-signum {
   font-family: "Signa Latina";
-  font-size: 100px;
-  color: #92222c;
   font-style: normal;
-  line-height: 1;
-}
-
-.u-signum-xl {
-  font-size: 150px;
-}
-
-.u-flexrow {
-  display: flex;
-  flex-direction: row;
-}
-
-.u-flex-eq {
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
-.u-items-center {
-  align-items: center;
-}
-
-.u-content-center {
-  justify-content: center;
+  color: #92222c;
+  text-shadow: #333 3px 3px 5px;
 }
 
 .u-text-center {
@@ -93,27 +73,94 @@ h2, .h2 {
 
 .TopBar {
   height: 70px;
-  margin-bottom: 40px;
   background-color: #ff9a8e;
   border-bottom: 1px solid #333;
 }
 
-.Images {
-  margin: 20px auto 30px auto;
+.TopBar-Button {
+  width: 150px;
 }
 
-.Images-item-imageContainer {
-  height: 300px;
+.ImageItem-imageContainer {
+  height: 50vh;
   margin-bottom: 15px;
 }
 
-.Images-item-image {
+.ImageItem-image {
   padding: 0 30px;
-  max-width: 300px;
+  max-width: 100%;
   max-height: 100%;
+}
+
+.ImageItem-labels {
+  display: flex;
+  flex-direction: row;
+}
+
+.ImageItem-labels-signum {
+  display: none;
+  font-size: 60px;
+  margin-left: 25px;
+}
+
+.ImageItem-labels-signum:not(:empty) {
+  display: block;
+}
+
+.Tense--signum {
+  font-size: 120px;
 }
 
 .VocabChooser {
   font-size: 25px;
   margin-bottom: 40px;
+}
+
+@media screen and (max-width:767px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1, .h1 {
+    font-size: 21px;
+  }
+
+  h2, .h2 {
+    font-size: 16px;
+  }
+
+  .Button--large {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .TopBar-Button {
+    width: 100px;
+  }
+
+  .ImageItem-imageContainer {
+    height: 200px;
+  }
+
+  .ImageItem-image {
+    padding: 0 15px;
+  }
+
+  .ImageItem-labels {
+    flex-direction: column;
+  }
+
+  .ImageItem-labels-signum {
+    font-size: 40px;
+    margin-left: 0;
+  }
+
+  .Tense--signum {
+    font-size: 70px;
+  }
+
+  .VocabChooser {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
 }
