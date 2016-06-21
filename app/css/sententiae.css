@@ -114,7 +114,11 @@ h2, .h2 {
   margin-left: 25px;
 }
 
-.Tense--signum {
+.Info {
+  height: 105px;
+}
+
+.Info-tense--signum {
   font-size: 120px;
   text-shadow: #333 3px 3px 5px;
 }
@@ -168,7 +172,11 @@ h2, .h2 {
     margin-left: 15px;
   }
 
-  .Tense--signum {
+  .Info {
+    height: 45px;
+  }
+
+  .Info-tense--signum {
     font-size: 50px;
     text-shadow: #333 2px 2px 4px;
   }

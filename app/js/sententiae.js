@@ -57,9 +57,9 @@ function _setVerbText(text) {
 
 function _setTenseText(text, isSignum) {
   if (isSignum) {
-    $('#tense').html(text).addClass('u-signum Tense--signum');
+    $('#tense').html(text).addClass('u-signum Info-tense--signum');
   } else {
-    $('#tense').html(text).removeClass('u-signum Tense--signum');
+    $('#tense').html(text).removeClass('u-signum Info-tense--signum');
   }
 }
 
