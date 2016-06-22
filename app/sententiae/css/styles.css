@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Signa Latina";
-  src: url("../fonts/signa-latina.otf");
+  src: url("/common/fonts/signa-latina.otf");
 }
 
 html {
@@ -26,6 +26,11 @@ select {
   appearance: none;
   background-color: #9ddfff;
   padding: 10px 20px;
+}
+
+button {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 select:focus,
