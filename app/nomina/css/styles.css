@@ -1,0 +1,44 @@
+body {
+  font-family: "Baloo", sans-serif;
+  font-size: 6vh;
+  background-color: #ffffcc;
+  padding: 5vh;
+}
+
+button {
+  font-family: "Baloo", sans-serif;
+  font-size: 4vh;
+  padding: 1.5vh 3vh;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+button:active {
+  background-color: lightgray;
+}
+
+button:focus {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ImageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
+  margin-bottom: 4vh;
+}
+
+.Image {
+  align-self: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.CaseLabel {
+  margin-bottom: 4vh;
+}
