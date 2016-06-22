@@ -25,20 +25,19 @@ button:focus {
   text-align: center;
 }
 
+.space-below {
+  margin-bottom: 4vh;
+}
+
 .ImageContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 50vh;
-  margin-bottom: 4vh;
 }
 
 .Image {
   align-self: center;
   max-width: 100%;
   max-height: 100%;
-}
-
-.CaseLabel {
-  margin-bottom: 4vh;
 }
