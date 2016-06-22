@@ -30,7 +30,8 @@ button:focus {
 #main-image {
   display: block;
   margin: 0 auto;
-  height: 600px;
+  max-height: calc(100vh - 120px);
+  max-width: 80%;
   border-radius: 20px;
   box-shadow: 2px 1px 10px #333;
 }
