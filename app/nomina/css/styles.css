@@ -8,13 +8,14 @@ body {
 button {
   font-family: "Baloo", sans-serif;
   font-size: 4vh;
-  padding: 1.5vh 3vh;
+  padding: 1vh 3vh;
   border-radius: 5px;
   border: 1px solid #333;
+  background-color: #91ABF7;
 }
 
 button:active {
-  background-color: lightgray;
+  background-color: #C8C8C8;
 }
 
 button:focus {
@@ -26,14 +27,14 @@ button:focus {
 }
 
 .space-below {
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
 }
 
 .ImageContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 50vh;
+  height: 45vh;
 }
 
 .Image {
