@@ -1,11 +1,3 @@
-var IMAGE_FILE_NAMES = [
-  'diva.png', 'draco.png', 'extraterrestris.png', 'genius.png', 'gnomus.png',
-  'magus.png', 'monstrum.png', 'pirata.png', 'robotum.png', 'sanguisuga.png',
-  'striga.png', 'trollum.png', 'unicornis.png', 'versipellis.png'
-];
-
-var ALL_CASES = ['Nom', 'Gen', 'Dat', 'Acc', 'Abl', 'Voc'];
-
 function Collection(allItems) {
   this._allItems = allItems;
   this._availableItems = [];
@@ -27,8 +19,16 @@ Collection.prototype.chooseRandom = function() {
 
 // --------------------------------------------------------------- //
 
-var imageCollection = new Collection(IMAGE_FILE_NAMES);
+var ALL_CASES = ['Nom', 'Gen', 'Dat', 'Acc', 'Abl', 'Voc'];
 var caseCollection = new Collection(ALL_CASES);
+var imageCollection;
+
+function initialize() {
+  $.get('/nomina_images', function(imagePaths) {
+    imageCollection = new Collection(imagePaths);
+    generateQuestion();
+  });
+}
 
 function generateQuestion() {
   var randomFileName = imageCollection.chooseRandom();
@@ -39,12 +39,12 @@ function generateQuestion() {
   setCaseLabel(randomCase);
 }
 
-function setImage(imageFileName) {
-  document.getElementById('image').src = 'images/' + imageFileName;
+function setImage(imagePath) {
+  document.getElementById('image').src = imagePath;
 }
 
-function setImageVocabLabel(imageFileName) {
-  document.getElementById('vocab').innerHTML = imageFileName.replace(/\.\w{3,}$/, '');
+function setImageVocabLabel(imagePath) {
+  document.getElementById('vocab').innerHTML = imagePath.match(/([^/]+)\.\w{2,3}$/)[1];
 }
 
 function setCaseLabel(caseName) {

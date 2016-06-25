@@ -5,6 +5,13 @@ router.get('/', (req, res) => {
   res.redirect('/sententiae');
 });
 
+router.get('/nomina_images', (req, res) => {
+  fs.readdir('app/nomina/images/', (err, files) => {
+    const filePaths = files.map(fileName => `/nomina/images/${fileName}`);
+    res.send(filePaths);
+  });
+});
+
 router.get('/slideshow_images', (req, res) => {
   fs.readdir('app/slideshow/images/', (err, files) => {
     const filePaths = files.map(fileName => `/slideshow/images/${fileName}`);
