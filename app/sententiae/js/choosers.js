@@ -9,19 +9,19 @@ const ALL_TENSE_NAMES = ['present', 'imperfect', 'future', 'perfect', 'pluperfec
 const ALL_TENSE_SYMBOLS = ['q', 'w', 'e', 'i', 'o', 'p'];
 
 const ANIMATE_VERB_CHOOSER = new ItemChooser([
-  'servāre', 'salūtāre', 'vidēre', 'timēre', 'reprehendere', 'conspicere', 'audīre', 'custōdīre'
+  'servare', 'salūtare', 'videre', 'timere', 'reprehendere', 'conspicere', 'audire', 'custodire'
 ]);
 
 const FOOD_VERB_CHOOSER = new ItemChooser([
-  'amāre', 'parāre', 'cupere', 'sūmere', 'emere', 'petere', 'rapere', 'iacere'
+  'amare', 'parare', 'cupere', 'sūmere', 'emere', 'petere', 'rapere', 'iacere'
 ]);
 
 const LINKING_VERB_CHOOSER = new ItemChooser([
-  'esse', 'vidērī', 'fierī'
+  'esse', 'videri', 'fieri'
 ]);
 
 const TRAVEL_VERB_CHOOSER = new ItemChooser([
-  'appropinquāre', 'fugere', 'venīre'
+  'appropinquare', 'fugere', 'venire'
 ]);
 
 const ADJ_SIGNUM_CHOOSER = new ItemChooser([SUBJECT_SIGNUM]);
