@@ -12,9 +12,6 @@ function initialize() {
     Object.keys(images).forEach(function(category) {
       if (VOCAB_CATEGORIES[category]) {
         VOCAB_CATEGORIES[category].nounChooser = new ItemChooser(images[category]);
-        images[category].forEach(function(imagePath) {
-          $.get(imagePath);
-        });
       }
     });
 
