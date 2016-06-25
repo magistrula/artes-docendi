@@ -4,8 +4,8 @@
 
   <head>
     <title>Artes Docendi - Nomina</title>
-    <link rel="icon" type="image/x-icon" href="/nomina/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/nomina/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
     <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no">
   </head>
@@ -16,19 +16,20 @@
       <div class="ImageContainer space-below">
         <img class="Image" id="image">
       </div>
-      <div id="image-label">Image Label</div>
+      <div id="vocab">Image Label</div>
     </div>
 
-    <div class="space-below text-center" id="case-label">Case</div>
+    <div class="space-below text-center" id="case">Case</div>
 
     <div class="text-center">
       <button onclick=generateQuestion()>Next</button>
     </div>
 
-    <script src="/nomina/js/nomina.js"></script>
+    <script src="/common/js/jquery-1.11.3.min.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
-      window.onload = generateQuestion;
+      window.onload = initialize;
     </script>
 
   </body>
