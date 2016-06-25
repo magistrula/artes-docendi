@@ -40,7 +40,7 @@ function generateQuestion() {
 }
 
 function setImage(imageFileName) {
-  document.getElementById('image').src = '/nomina/images/' + imageFileName;
+  document.getElementById('image').src = 'images/' + imageFileName;
 }
 
 function setImageVocabLabel(imageFileName) {
