@@ -7,24 +7,22 @@ var IMAGE_FILE_NAMES = [
 var ALL_CASES = ['Nom', 'Gen', 'Dat', 'Acc', 'Abl', 'Voc'];
 
 function Collection(allItems) {
-  this.allItems = allItems;
-  this.availableItems = [];
-  this.refillAvailableItems();
+  this._allItems = allItems;
+  this._availableItems = [];
+  this._refillAvailableItems();
 }
 
-Collection.prototype.refillAvailableItems = function() {
-  this.availableItems = this.allItems.slice();
+Collection.prototype._refillAvailableItems = function() {
+  this._availableItems = this._allItems.slice();
 }
 
 Collection.prototype.chooseRandom = function() {
-  if (this.availableItems.length === 0) {
-    this.refillAvailableItems();
+  if (this._availableItems.length === 0) {
+    this._refillAvailableItems();
   }
 
-  var randomIndex = Math.floor(Math.random() * this.availableItems.length);
-  var randomItem = this.availableItems[randomIndex];
-  this.availableItems.splice(randomIndex, 1);
-  return randomItem;
+  var randomIndex = Math.floor(Math.random() * this._availableItems.length);
+  return this._availableItems.splice(randomIndex, 1)[0];
 }
 
 // --------------------------------------------------------------- //
@@ -46,7 +44,7 @@ function setImage(imageFileName) {
 }
 
 function setImageVocabLabel(imageFileName) {
-  document.getElementById('vocab').innerHTML = imageFileName.replace(/.\w{3,}$/, '');
+  document.getElementById('vocab').innerHTML = imageFileName.replace(/\.\w{3,}$/, '');
 }
 
 function setCaseLabel(caseName) {
