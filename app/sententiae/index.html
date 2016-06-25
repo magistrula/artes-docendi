@@ -13,63 +13,65 @@
   </head>
 
   <body>
-    <div class="TopBar row middle-xs center-xs mb-lg">
-      <button class="Button Button--large TopBar-Button" id="with-verb-button" disabled onclick=chooseItemsWithVerb()>
-        + Verb
-      </button>
+    <div class="VerticalLayout">
+      <div class="TopBar row middle-xs center-xs">
+        <button class="Button Button--large TopBar-Button" id="with-verb-button" disabled onclick=chooseItemsWithVerb()>
+          + Verb
+        </button>
 
-      <button class="Button Button--large TopBar-Button" id="with-signa-button" disabled onclick=chooseItemsWithSigna()>
-        + Signa
-      </button>
-    </div>
-
-    <div class="row center-xs around-xs">
-      <div class="col-xs-6 col-sm">
-        <select class="VocabChooser" id="noun1-select" onchange="setVocabChoosers()">
-          <option value="animalia">Animalia</option>
-          <option value="homines" selected>Homines</option>
-          <option value="monstra">Monstra</option>
-        </select>
+        <button class="Button Button--large TopBar-Button" id="with-signa-button" disabled onclick=chooseItemsWithSigna()>
+          + Signa
+        </button>
       </div>
 
-      <div class="col-xs-6 col-sm last-sm">
-        <select class="VocabChooser" id="noun2-select" onchange="setVocabChoosers()">
-          <option value="affectus">Affectus</option>
-          <option value="animalia">Animalia</option>
-          <option value="cibi">Cibi</option>
-          <option value="homines">Homines</option>
-          <option value="loca">Loca</option>
-          <option value="monstra" selected>Monstra</option>
-          <option value="vehicula">Vehicula</option>
-        </select>
-      </div>
-
-      <div class="Info col-xs-12 col-sm u-text-center">
-        <div class="h1" id="verb"></div>
-        <span class="h2" id="tense"></span>
-      </div>
-    </div>
-
-    <div class="Images row center-xs" id="sententiae" hidden>
-      <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
-        <div class="ImageItem-imageContainer row middle-xs center-xs">
-          <img class="ImageItem-image" id="noun1">
+      <div class="Controls row center-xs around-xs">
+        <div class="col-xs-6 col-sm first-sm">
+          <select class="VocabChooser" id="noun1-select" onchange="setVocabChoosers()">
+            <option value="animalia">Animalia</option>
+            <option value="homines" selected>Homines</option>
+            <option value="monstra">Monstra</option>
+          </select>
         </div>
 
-        <div class="ImageItem-labels middle-xs center-xs">
-          <div class="ImageItem-labels-vocab h1" id="noun1-label"></div>
-          <span class="ImageItem-labels-signum ImageItem-labels-signum--left u-signum" id="noun1-signum"></span>
+        <div class="col-xs-6 col-sm last-xs last-sm">
+          <select class="VocabChooser" id="noun2-select" onchange="setVocabChoosers()">
+            <option value="affectus">Affectus</option>
+            <option value="animalia">Animalia</option>
+            <option value="cibi">Cibi</option>
+            <option value="homines">Homines</option>
+            <option value="loca">Loca</option>
+            <option value="monstra" selected>Monstra</option>
+            <option value="vehicula">Vehicula</option>
+          </select>
+        </div>
+
+        <div class="Info col-xs-12 col-sm u-text-center first-xs">
+          <div class="h1" id="verb"></div>
+          <span class="h2" id="tense"></span>
         </div>
       </div>
 
-      <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
-        <div class="ImageItem-imageContainer row middle-xs center-xs">
-          <img class="ImageItem-image" id="noun2">
+      <div class="Images center-xs" id="sententiae" hidden>
+        <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
+          <div class="ImageItem-imageContainer row middle-xs center-xs">
+            <img class="ImageItem-image" id="noun1">
+          </div>
+
+          <div class="ImageItem-labels middle-xs center-xs">
+            <div class="ImageItem-labels-vocab h1" id="noun1-label"></div>
+            <span class="ImageItem-labels-signum ImageItem-labels-signum--left u-signum" id="noun1-signum"></span>
+          </div>
         </div>
 
-        <div class="ImageItem-labels middle-xs center-xs">
-          <div class="ImageItem-labels-vocab h1" id="noun2-label"></div>
-          <span class="ImageItem-labels-signum ImageItem-labels-signum--right u-signum" id="noun2-signum"></span>
+        <div class="ImageItem col-xs-12 col-sm-6 mb-lg">
+          <div class="ImageItem-imageContainer row middle-xs center-xs">
+            <img class="ImageItem-image" id="noun2">
+          </div>
+
+          <div class="ImageItem-labels middle-xs center-xs">
+            <div class="ImageItem-labels-vocab h1" id="noun2-label"></div>
+            <span class="ImageItem-labels-signum ImageItem-labels-signum--right u-signum" id="noun2-signum"></span>
+          </div>
         </div>
       </div>
     </div>

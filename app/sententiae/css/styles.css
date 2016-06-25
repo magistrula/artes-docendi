@@ -64,6 +64,12 @@ h2, .h2 {
   text-align: center;
 }
 
+.VerticalLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .Button {
   border: 1px solid #333;
   background-color: #ffff99;
@@ -82,7 +88,9 @@ h2, .h2 {
 
 .TopBar {
   height: 70px;
+  margin-bottom: 25px;
   background-color: #ff9a8e;
+  border-top: 1px solid #333;
   border-bottom: 1px solid #333;
 }
 
@@ -90,8 +98,13 @@ h2, .h2 {
   width: 150px;
 }
 
+.Controls {
+  margin-bottom: 20px;
+}
+
 .Images {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .ImageItem-imageContainer {
@@ -159,10 +172,23 @@ h2, .h2 {
 
   .TopBar {
     height: 60px;
+    margin: 0;
+    flex-shrink: 0;
+    order: 3;
   }
 
   .TopBar-Button {
     width: 100px;
+  }
+
+  .Controls {
+    flex-shrink: 0;
+    order: 2;
+  }
+
+  .Images {
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .ImageItem-imageContainer {
@@ -176,7 +202,7 @@ h2, .h2 {
   }
 
   .ImageItem-labels-signum {
-    font-size: 35px;
+    font-size: 25px;
     text-shadow: #333 1px 1px 3px;
   }
 
@@ -185,11 +211,12 @@ h2, .h2 {
   }
 
   .Info {
-    height: 45px;
+    height: 50px;
+    margin-bottom: 20px;
   }
 
   .Info-tense--signum {
-    font-size: 50px;
+    font-size: 60px;
     text-shadow: #333 2px 2px 4px;
   }
 
