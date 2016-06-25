@@ -68,7 +68,10 @@ h2, .h2 {
   display: flex;
   flex-direction: column;
   -webkit-flex-direction: column;
-  height: calc(100vh - 80px);
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .Button {
@@ -101,6 +104,7 @@ h2, .h2 {
 
 .Controls {
   margin-bottom: 20px;
+  padding: 0 50px;
 }
 
 .Images {
@@ -158,9 +162,10 @@ h2, .h2 {
 
 .VocabChooser {
   font-size: 25px;
+  align-self: center;
 }
 
-@media screen and (max-width:767px) and (orientation:portrait) {
+@media screen and (max-device-width:1023px) {
   body {
     font-size: 16px;
   }
@@ -182,10 +187,11 @@ h2, .h2 {
     height: 60px;
     margin: 0;
     flex-shrink: 0;
-    -webkit-flex-shrink: 0;
     order: 3;
     background: none;
     border: none;
+    -webkit-flex-shrink: 0;
+    -webkit-order: 3;
   }
 
   .TopBar-Button {
@@ -194,17 +200,13 @@ h2, .h2 {
 
   .Controls {
     flex-shrink: 0;
-    -webkit-flex-shrink: 0;
     order: 2;
     margin-bottom: 15px;
+    -webkit-flex-shrink: 0;
+    -webkit-order: 2;
   }
 
   .Images {
-    flex-direction: column;
-    flex-grow: 1;
-    -webkit-flex-direction: column;
-    -webkit-flex-grow: 1;
-    justify-content: space-around;
     padding: 2vh;
   }
 
@@ -213,7 +215,6 @@ h2, .h2 {
   }
 
   .ImageItem-imageContainer {
-    height: 18vh;
     margin-bottom: 5px;
   }
 
@@ -247,5 +248,58 @@ h2, .h2 {
 
   .VocabChooser {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-device-width:767px) and (orientation:portrait) {
+  .VerticalLayout {
+    height: calc(100vh - 80px);
+  }
+
+  .Info {
+    order: 1;
+    width: 100%;
+    -webkit-order: 1;
+  }
+
+  .VocabChooser--noun1 {
+    order: 2;
+    -webkit-order: 2;
+  }
+
+  .VocabChooser--noun2 {
+    order: 3;
+    -webkit-order: 3;
+  }
+
+  .Images {
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+    -webkit-flex-direction: column;
+    -webkit-flex-grow: 1;
+    -webkit-justify-content: space-around;
+  }
+
+  .ImageItem-imageContainer {
+    height: 18vh;
+  }
+}
+
+@media screen and (max-device-width:1023px) and (orientation:landscape) {
+  .VerticalLayout {
+    height: calc(100vh - 45px);
+  }
+
+  .Info {
+    margin-bottom: 0;
+  }
+
+  .Images {
+    padding: 4vh;
+  }
+
+  .ImageItem-imageContainer {
+    height: 35vh;
   }
 }

@@ -23,31 +23,27 @@
         </button>
       </div>
 
-      <div class="Controls row center-xs around-xs">
-        <div class="col-xs-6 col-sm first-sm">
-          <select class="VocabChooser" id="noun1-select" onchange="setVocabChoosers()">
-            <option value="animalia">Animalia</option>
-            <option value="homines" selected>Homines</option>
-            <option value="monstra">Monstra</option>
-          </select>
-        </div>
+      <div class="Controls row center-xs between-xs">
+        <select class="VocabChooser VocabChooser--noun1" id="noun1-select" onchange="setVocabChoosers()">
+          <option value="animalia">Animalia</option>
+          <option value="homines" selected>Homines</option>
+          <option value="monstra">Monstra</option>
+        </select>
 
-        <div class="col-xs-6 col-sm last-xs last-sm">
-          <select class="VocabChooser" id="noun2-select" onchange="setVocabChoosers()">
-            <option value="affectus">Affectus</option>
-            <option value="animalia">Animalia</option>
-            <option value="cibi">Cibi</option>
-            <option value="homines">Homines</option>
-            <option value="loca">Loca</option>
-            <option value="monstra" selected>Monstra</option>
-            <option value="vehicula">Vehicula</option>
-          </select>
-        </div>
-
-        <div class="Info col-xs-12 col-sm u-text-center first-xs">
+        <div class="Info u-text-center">
           <div class="h1" id="verb"></div>
           <span class="h2" id="tense"></span>
         </div>
+
+        <select class="VocabChooser VocabChooser--noun2" id="noun2-select" onchange="setVocabChoosers()">
+          <option value="affectus">Affectus</option>
+          <option value="animalia">Animalia</option>
+          <option value="cibi">Cibi</option>
+          <option value="homines">Homines</option>
+          <option value="loca">Loca</option>
+          <option value="monstra" selected>Monstra</option>
+          <option value="vehicula">Vehicula</option>
+        </select>
       </div>
 
       <div class="Images" id="sententiae" hidden>
