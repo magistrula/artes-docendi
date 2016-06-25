@@ -184,6 +184,8 @@ h2, .h2 {
     flex-shrink: 0;
     -webkit-flex-shrink: 0;
     order: 3;
+    background: none;
+    border: none;
   }
 
   .TopBar-Button {
