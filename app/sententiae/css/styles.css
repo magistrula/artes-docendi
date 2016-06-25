@@ -44,12 +44,12 @@ button:focus {
 }
 
 h1, .h1 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
 }
 
 h2, .h2 {
-  font-size: 35px;
+  font-size: 30px;
   font-style: italic;
   font-weight: normal;
 }
@@ -96,18 +96,25 @@ h2, .h2 {
 
 .ImageItem-imageContainer {
   height: 50vh;
+  padding: 0 30px;
   margin-bottom: 15px;
 }
 
 .ImageItem-image {
-  padding: 0 30px;
-  max-width: 100%;
+  max-width: 30vw;
   max-height: 100%;
 }
 
 .ImageItem-labels {
   display: flex;
+  padding: 0 30px;
   flex-direction: row;
+}
+
+.ImageItem-labels-vocab {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ImageItem-labels-signum {
