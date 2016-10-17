@@ -5,8 +5,8 @@ const TO_SIGNUM = 's';
 const FROM_SIGNUM = 'j';
 const IN_SIGNUM = 'k';
 const WITH_SIGNUM = 'l';
-const ALL_TENSE_NAMES = ['present', 'imperfect', 'future', 'perfect', 'pluperfect', 'future perfect'];
-const ALL_TENSE_SYMBOLS = ['q', 'w', 'e', 'i', 'o', 'p'];
+const ALL_TENSE_NAMES = ['present'/*, 'imperfect', 'future', 'perfect', 'pluperfect', 'future perfect'*/];
+const ALL_TENSE_SYMBOLS = [/*'q', 'w', 'e', */'i'/*, 'o', 'p'*/];
 
 const ANIMATE_VERB_CHOOSER = new Collection([
   'servare', 'salūtare', 'videre', 'timere', 'reprehendere', 'conspicere', 'audire', 'custodire'
@@ -26,7 +26,7 @@ const TRAVEL_VERB_CHOOSER = new Collection([
 
 const ADJ_SIGNUM_CHOOSER = new Collection([SUBJECT_SIGNUM]);
 const PLACE_OBJECT_SIGNUM_CHOOSER = new Collection([DIR_OBJ_SIGNUM, TO_SIGNUM, FROM_SIGNUM, IN_SIGNUM]);
-const PERSON_OBJECT_SIGNUM_CHOOSER = new Collection([DIR_OBJ_SIGNUM, IND_OBJ_SIGNUM, WITH_SIGNUM, FROM_SIGNUM]);
+const PERSON_OBJECT_SIGNUM_CHOOSER = new Collection([DIR_OBJ_SIGNUM/*, IND_OBJ_SIGNUM, WITH_SIGNUM, FROM_SIGNUM*/]);
 const FOOD_OBJECT_SIGNUM_CHOOSER = new Collection([DIR_OBJ_SIGNUM, WITH_SIGNUM]);
 const VEHICLE_OBJECT_SIGNUM_CHOOSER = new Collection([DIR_OBJ_SIGNUM, WITH_SIGNUM, IN_SIGNUM]);
 
