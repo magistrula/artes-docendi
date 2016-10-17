@@ -38,6 +38,7 @@ const VOCAB_CATEGORIES = {
   animalia: { verbChooser: ANIMATE_VERB_CHOOSER, objectSignumChooser: PERSON_OBJECT_SIGNUM_CHOOSER },
   cibi: { verbChooser: FOOD_VERB_CHOOSER, objectSignumChooser: FOOD_OBJECT_SIGNUM_CHOOSER },
   homines: { verbChooser: ANIMATE_VERB_CHOOSER, objectSignumChooser: PERSON_OBJECT_SIGNUM_CHOOSER },
+  simpsonii: { verbChooser: ANIMATE_VERB_CHOOSER, objectSignumChooser: PERSON_OBJECT_SIGNUM_CHOOSER },
   loca: { verbChooser: TRAVEL_VERB_CHOOSER, objectSignumChooser: PLACE_OBJECT_SIGNUM_CHOOSER },
   monstra: { verbChooser: ANIMATE_VERB_CHOOSER, objectSignumChooser: PERSON_OBJECT_SIGNUM_CHOOSER },
   vehicula: { verbChooser: TRAVEL_VERB_CHOOSER, objectSignumChooser: VEHICLE_OBJECT_SIGNUM_CHOOSER }

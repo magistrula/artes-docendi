@@ -17,7 +17,7 @@
         }
       });
 
-      _setVocabChoosers();
+      setVocabChoosers();
       chooseItemsWithVerb();
 
       $('#sententiae').show()
@@ -44,7 +44,7 @@
     );
   }
 
-  function _setVocabChoosers() {
+  function setVocabChoosers() {
     const noun1Category = document.getElementById('noun1-select').value;
     const noun2Category = document.getElementById('noun2-select').value;
     CHOOSERS.noun1 = VOCAB_CATEGORIES[noun1Category].nounChooser;
@@ -77,10 +77,11 @@
   }
 
   function _getImageName(path) {
-    return path.match(/\/([^/]+)\.png/)[1].replace(/-/g, ' ');
+    return path.match(/\/([^/]+)\.(png|jpg|gif|svg)/)[1].replace(/-/g, ' ');
   }
 
   exports.initialize = initialize;
   exports.chooseItemsWithVerb = chooseItemsWithVerb;
   exports.chooseItemsWithSigna = chooseItemsWithSigna;
+  exports.setVocabChoosers = setVocabChoosers;
 })(this);

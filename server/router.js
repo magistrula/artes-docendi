@@ -26,7 +26,7 @@ router.get('/sententiae_images', (req, res) => {
     folderNames.forEach((folderName, folderIndex, folders) => {
       fs.readdir(`app/sententiae/images/${folderName}`, (err, fileNames) => {
         fileHash[folderName] = fileNames
-          .filter(fileName => /\.png$/.test(fileName))
+          .filter(fileName => /\.(png|jpg|gif|svg)$/.test(fileName))
           .map(fileName => `/sententiae/images/${folderName}/${fileName}`);
 
         if (Object.keys(fileHash).length === folders.length) {
