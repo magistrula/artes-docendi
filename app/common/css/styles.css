@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Signa Latina";
+  src: url("/common/fonts/signa-latina.otf");
+}
+
+html {
+  min-width: 320px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-signum {
+  font-family: "Signa Latina";
+  font-style: normal;
+  color: #92222c;
+}
+
+.mar-b-5 {
+  margin-bottom: 5px;
+}
+
+.VerticalLayout {
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}

@@ -12,6 +12,13 @@ router.get('/nomina_images', (req, res) => {
   });
 });
 
+router.get('/numeralia_images', (req, res) => {
+  fs.readdir('app/numeralia/images/', (err, files) => {
+    const filePaths = files.map(fileName => `/numeralia/images/${fileName}`);
+    res.send(filePaths);
+  });
+});
+
 router.get('/slideshow_images', (req, res) => {
   fs.readdir('app/slideshow/images/', (err, files) => {
     const filePaths = files.map(fileName => `/slideshow/images/${fileName}`);

@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Signa Latina";
-  src: url("/common/fonts/signa-latina.otf");
-}
-
-html {
-  min-width: 320px;
-}
-
 body,
 select,
 button {
@@ -52,16 +43,6 @@ h2, .h2 {
   font-size: 30px;
   font-style: italic;
   font-weight: normal;
-}
-
-.u-signum {
-  font-family: "Signa Latina";
-  font-style: normal;
-  color: #92222c;
-}
-
-.u-text-center {
-  text-align: center;
 }
 
 .VerticalLayout {
@@ -157,6 +138,7 @@ h2, .h2 {
 
 .Info-tense--signum {
   font-size: 120px;
+  font-style: normal;
   text-shadow: #333 3px 3px 5px;
 }
 

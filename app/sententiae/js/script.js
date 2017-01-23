@@ -59,9 +59,9 @@
 
   function _setTenseText(text, isSignum) {
     if (isSignum) {
-      $('#tense').html(text).addClass('u-signum Info-tense--signum');
+      $('#tense').html(text).addClass('text-signum Info-tense--signum');
     } else {
-      $('#tense').html(text).removeClass('u-signum Info-tense--signum');
+      $('#tense').html(text).removeClass('text-signum Info-tense--signum');
     }
   }
 
