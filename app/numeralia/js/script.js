@@ -32,7 +32,7 @@
   }
 
   function _getFileNameWithoutExtension(filePath) {
-    return filePath.match(/([^/]+)\.\w{2,3}$/)[1];
+    return filePath.match(/([^/]+)\.\w{2,3}$/)[1].replace(/(\w)\(/g, '$1 (');
   }
 
   exports.initialize = initialize;
