@@ -5,5 +5,9 @@
   "author": "Anna Andresian",
   "dependencies": {
     "express": "^4.13.0"
+  },
+  "engines": {
+    "node": "4.8.4",
+    "npm": "2.15.2"
   }
 }
