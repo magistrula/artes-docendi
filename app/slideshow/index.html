@@ -3,14 +3,25 @@
 
   <head>
     <title>Artes Docendi - Slideshow</title>
+    <link rel="stylesheet" type="text/css" href="/common/css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no">
   </head>
 
   <body>
-    <button class="large-button main-image-button" onclick=setImage() disabled >GO!</button>
-    <img id="main-image">
+    <div>
+      <button class="large-button main-image-button" onclick=setImage() disabled >GO!</button>
+      <img id="main-image">
+    </div>
+
+    <div class="PageLinks">
+      <a href="/nomina">Nomina</a>
+      <a href="/numeralia">Numeralia</a>
+      <a href="/sententiae">Sententiae</a>
+      <a href="/slideshow">Slideshow</a>
+    </div>
 
     <script src="/common/js/jquery-1.11.3.min.js"></script>
     <script src="/common/js/collection.js"></script>

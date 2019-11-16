@@ -7,6 +7,18 @@ html {
   min-width: 320px;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+a:visited {
+  color: blue;
+}
+
 .text-center {
   text-align: center;
 }
@@ -17,12 +29,33 @@ html {
   color: #92222c;
 }
 
+.font-bold {
+  font-weight: 600;
+}
+
 .red {
   color: #B84D4D;
 }
 
 .mar-b-5 {
   margin-bottom: 5px;
+}
+
+.mar-b-20 {
+  margin-bottom: 20px;
+}
+
+.mar-t-20 {
+  margin-top: 20px;
+}
+
+.PageLinks {
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
 }
 
 .VerticalLayout {

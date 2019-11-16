@@ -1,5 +1,5 @@
 (function(exports) {
-  var ALL_CASES = ['Nom', 'Gen', 'Dat', 'Acc', 'Abl', 'Voc'];
+  var ALL_CASES = ['nom.', 'gen.', 'dat.', 'acc.', 'abl.', 'voc.'];
   var caseCollection = new Collection(ALL_CASES);
   var imagePathCollection;
 

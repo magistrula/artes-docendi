@@ -8,22 +8,31 @@
     <link rel="stylesheet" type="text/css" href="/common/css/styles.css">
     <link rel="stylesheet" href="/common/css/styles.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no">
   </head>
 
   <body>
 
-    <div class="text-center">
-      <div class="ImageContainer mar-b-5">
-        <img class="ImageContainer-Image" id="image">
+    <div class="Main">
+      <div class="text-center mar-b-20">
+        <div class="ImageContainer mar-b-5">
+          <img class="ImageContainer-Image" id="image">
+        </div>
+        <div id="vocab"></div>
+        <div id="quantity" class="red"></div>
       </div>
-      <div id="vocab"></div>
-      <div id="quantity" class="red"></div>
+
+      <div class="text-center">
+        <button onclick=generateQuestion()>Next</button>
+      </div>
     </div>
 
-    <div class="text-center">
-      <button onclick=generateQuestion()>Next</button>
+    <div class="PageLinks">
+      <a href="/nomina">Nomina</a>
+      <a href="/numeralia">Numeralia</a>
+      <a href="/sententiae">Sententiae</a>
+      <a href="/slideshow">Slideshow</a>
     </div>
 
     <script src="/common/js/jquery-1.11.3.min.js"></script>
